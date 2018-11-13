@@ -29,6 +29,7 @@
     "electron": "^3.0.6",
     "eslint": "^5.5.0",
     "mocha": "^5.2.0",
+    "path": "^0.12.7",
     "spectron": "^4.0.0"
   },
   "engines": {

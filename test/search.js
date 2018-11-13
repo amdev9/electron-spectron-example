@@ -1,5 +1,8 @@
+const path = require('path');
+const os = require('os');
+const fs = require('fs');
 const hooks = require('./hooks');
- 
+var expect = require('chai').expect;
 
 describe('Sample Test', () => {
   let app;
@@ -28,6 +31,13 @@ describe('Sample Test', () => {
       .waitForVisible('#test').should.eventually.be.true;
   });
 
- 
-
+  it('creates tmp directory', function ( ) {
+    const tmpDir = path.join(os.tmpdir(), 'test');
+    return app.client.waitUntilWindowLoaded()
+      .waitForVisible('#test').should.eventually.be.true
+      .then(function() {
+        expect(fs.existsSync(tmpDir)).to.equal(true);
+         
+      })  
+  })
 });
