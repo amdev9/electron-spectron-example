@@ -28,9 +28,6 @@ describe('Sample Test', () => {
       .waitForVisible('#test').should.eventually.be.true;
   });
 
-  it('fail: test tag exists', async() => {
-    await app.client.waitUntilWindowLoaded()
-      .waitForVisible('#test').should.eventually.be.false;
-  });
+ 
 
 });
